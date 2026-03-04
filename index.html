@@ -3,259 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tania Eki Permatasari | Portofolio Digital</title>
+    <title>Tania Eki Permatasari | Professional Midwife Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  8  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
         
         :root {
-            --cream: #FDFBF4;
-            --navy: #1B365D;
-            --maroon: #800000;
+            --royal-blue: #0A2647;
+            --deep-blue: #144272;
+            --gold: #C5A059;
+            --gold-light: #E2C799;
+            --white-silk: #F8FAFC;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--cream);
-            color: var(--navy);
-            scroll-behavior: smooth;
+            background-color: var(--white-silk);
+            color: var(--royal-blue);
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+        h1, h2, h3, .brand {
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .hero-gradient {
-            background: linear-gradient(135deg, #1B365D 0%, #4A1212 100%);
+            background: linear-gradient(135deg, #0A2647 0%, #144272 50%, #205295 100%);
         }
 
-        .card {
+        .gold-text {
+            background: linear-gradient(to right, #C5A059, #F1D393, #C5A059);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .medical-card {
             background: white;
-            border-radius: 20px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 30px rgba(27, 54, 93, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            transition: all 0.4s ease;
         }
 
-        .card:hover {
+        .medical-card:hover {
+            border-color: var(--gold);
             transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(10, 38, 71, 0.1);
         }
 
-        .img-evidence {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: 0.4s;
+        .heartbeat {
+            animation: heartbeat 1.5s ease-in-out infinite;
         }
 
-        .img-evidence:hover {
-            filter: saturate(1.2);
-            transform: scale(1.02);
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.1); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.1); }
+            70% { transform: scale(1); }
         }
 
-        .spinner {
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top: 3px solid #ffffff;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-            display: inline-block;
-            margin-right: 8px;
-            vertical-align: middle;
+        .floating {
+            animation: floating 3s ease-in-out infinite;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
+
+        .img-placeholder {
+            background: linear-gradient(135deg, #0A2647, #144272);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--royal-blue); border-radius: 10px; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navigasi -->
-    <nav class="fixed w-full z-50 bg-[#1B365D]/90 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center text-white">
-        <div class="text-xl font-bold tracking-wider uppercase">Tania Eki Permatasari</div>
-        <div class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
-            <a href="#home" class="hover:text-yellow-400 transition">Beranda</a>
-            <a href="#about" class="hover:text-yellow-400 transition">Profil</a>
-            <a href="#gallery" class="hover:text-yellow-400 transition">Bukti Aktif</a>
-            <a href="#experience" class="hover:text-yellow-400 transition">Riwayat</a>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-[#0A2647]/90 backdrop-blur-md py-4 px-8 md:px-16 flex justify-between items-center border-b border-[#C5A059]/20">
+        <div class="brand text-2xl font-bold text-white flex items-center gap-3">
+            <i class="fas fa-heartbeat text-[#C5A059] heartbeat"></i>
+            <span class="gold-text uppercase tracking-tighter">Tania Eki</span>
         </div>
-        <a href="mailto:ekitania6@gmail.com" class="bg-yellow-400 text-navy px-6 py-2 rounded-full font-bold hover:bg-yellow-300 transition shadow-md">Hubungi</a>
+        <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em] font-bold text-white/80">
+            <a href="#home" class="hover:text-[#C5A059] transition">Beranda</a>
+            <a href="#about" class="hover:text-[#C5A059] transition">Visi Medis</a>
+            <a href="#works" class="hover:text-[#C5A059] transition">Pencapaian</a>
+        </div>
+        <a href="https://wa.me/6281224289691" target="_blank" class="bg-[#C5A059] text-[#0A2647] px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white transition shadow-lg">Hubungi</a>
     </nav>
 
-    <!-- Bagian Hero (Utama) -->
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center px-6 pt-20 hero-gradient text-white text-center">
-        <div class="relative mb-10">
-            <div class="w-56 h-56 md:w-72 md:h-72 rounded-full border-4 border-white overflow-hidden shadow-2xl">
-                <!-- Foto Almamater Tania -->
-                <img src="IMG-20260304-WA0006.jpg" alt="Tania Eki Permatasari Almamater UNSIKA" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/300?text=Foto+Tania'">
-            </div>
-            <div class="absolute bottom-4 right-4 bg-yellow-400 p-4 rounded-full shadow-lg border-2 border-white">
-                <i class="fas fa-stethoscope text-[#1B365D] text-xl"></i>
-            </div>
-        </div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight">Tania Eki Permatasari</h1>
-        <p class="text-xl md:text-2xl font-light mb-10 max-w-3xl opacity-90 italic">
-            "Mahasiswi Kebidanan UNSIKA yang berjiwa pemimpin, ceria, dan aktif berkontribusi di organisasi kampus."
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <button onclick="generateMotivationalQuote()" class="bg-white text-navy px-8 py-3 rounded-full font-bold shadow-xl hover:bg-gray-100 transition transform hover:scale-105">
-                ✨ Pesan Semangat
-            </button>
-        </div>
-        <div id="quote-display" class="mt-8 max-w-xl mx-auto text-lg italic opacity-0 transition-all duration-500 bg-black/20 p-4 rounded-xl backdrop-blur-sm"></div>
-    </section>
-
-    <!-- Bagian Tentang & Organisasi -->
-    <section id="about" class="py-24 px-6 md:px-20 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 hero-gradient relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#C5A059 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="container mx-auto px-8 md:px-16 grid md:grid-cols-2 gap-12 items-center relative z-10">
             <div>
-                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-navy relative">
-                    Profil & Organisasi
-                    <span class="absolute -bottom-2 left-0 w-24 h-1 bg-maroon rounded-full"></span>
-                </h2>
-                <p class="text-xl leading-relaxed text-gray-700 mb-6">
-                    Saya mahasiswi Program Studi D3 Kebidanan di <span class="font-bold text-navy">UNSIKA</span> yang dikenal humoris dan mudah bergaul. Selain fokus pada akademik, saya mendedikasikan waktu saya untuk <span class="text-maroon font-bold underline decoration-wavy">aktif dalam keorganisasian kampus</span>.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-600 mb-10">
-                    Bagi saya, organisasi adalah tempat mengasah empati dan komunikasi yang krusial bagi seorang bidan. Saat ini saya bangga menjadi bagian dari <span class="font-bold">Himpunan Mahasiswa Kebidanan (HIMKA) UNSIKA</span>, di mana kami belajar berkolaborasi demi pelayanan masyarakat yang lebih baik.
-                </p>
-                
-                <!-- Fitur AI: Analisis Kepemimpinan -->
-                <div class="bg-white p-8 rounded-3xl shadow-xl border border-blue-50 relative overflow-hidden group">
-                    <h4 class="font-bold text-navy text-xl mb-3 flex items-center">
-                        <i class="fas fa-brain mr-3 text-blue-600"></i> ✨ AI Leadership Insight
-                    </h4>
-                    <p class="text-gray-600 mb-6 italic">Bagaimana pengalaman organisasi di HIMKA UNSIKA membentuk karakter bidan masa depan?</p>
-                    <button id="ai-vision-btn" onclick="askAIVision()" class="w-full bg-[#1B365D] text-white py-4 rounded-2xl font-bold hover:bg-blue-900 transition flex justify-center items-center">
-                        ✨ Analisis Karir AI
-                    </button>
-                    <div id="ai-vision-result" class="mt-6 text-gray-700 leading-relaxed hidden bg-blue-50/50 p-5 rounded-2xl border-l-8 border-navy italic"></div>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="h-[1px] w-12 bg-[#C5A059]"></span>
+                    <span class="text-[#C5A059] text-xs font-bold tracking-[0.4em] uppercase">Mahasiswi Kebidanan UNSIKA</span>
                 </div>
+                <h1 class="text-6xl md:text-8xl font-bold leading-tight mb-6 text-white">
+                    Tania Eki <br> <span class="gold-text italic">Permatasari.</span>
+                </h1>
+                <p class="text-lg text-blue-100/70 mb-10 max-w-lg leading-relaxed italic">
+                    "Menyulam empati dalam setiap tindakan medis. Berdedikasi untuk kesehatan ibu dan anak melalui pelayanan yang profesional dan hangat."
+                </p>
+                <div class="flex flex-wrap gap-6">
+                    <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})" class="bg-white text-[#0A2647] px-10 py-4 rounded-xl font-bold shadow-2xl hover:bg-[#C5A059] transition uppercase text-[10px] tracking-widest">Lihat Visi</button>
+                    <button onclick="generateMotivationalAI()" class="flex items-center gap-3 text-white font-bold hover:text-[#C5A059] transition group">
+                        <span class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#C5A059] transition"><i class="fas fa-magic"></i></span>
+                        <span class="text-[10px] tracking-widest uppercase">Inspirasi AI</span>
+                    </button>
+                </div>
+                <div id="ai-quote-box" class="mt-8 p-6 bg-white/5 backdrop-blur-md rounded-2xl hidden border border-white/10 text-blue-50 italic"></div>
             </div>
             
-            <div class="grid grid-cols-2 gap-6">
-                <div class="card p-8 text-center bg-blue-50/50 border border-blue-100">
-                    <i class="fas fa-users-rays text-4xl mb-4 text-navy"></i>
-                    <h3 class="font-bold text-lg mb-1">HIMKA UNSIKA</h3>
-                    <p class="text-xs text-gray-500">Anggota Aktif Himpunan</p>
-                </div>
-                <div class="card p-8 text-center bg-maroon/5 border border-maroon/10 mt-8">
-                    <i class="fas fa-crown text-4xl mb-4 text-maroon"></i>
-                    <h3 class="font-bold text-lg mb-1">Duta Keputrian</h3>
-                    <p class="text-xs text-gray-500">The 1st Miss of Duta 2023</p>
-                </div>
-                <div class="card p-8 text-center bg-yellow-50/50 border border-yellow-100">
-                    <i class="fas fa-comments text-4xl mb-4 text-yellow-600"></i>
-                    <h3 class="font-bold text-lg mb-1">Language Chief</h3>
-                    <p class="text-xs text-gray-500">Ketua Penggerak Bahasa</p>
-                </div>
-                <div class="card p-8 text-center bg-green-50/50 border border-green-100 mt-8">
-                    <i class="fas fa-palette text-4xl mb-4 text-green-700"></i>
-                    <h3 class="font-bold text-lg mb-1">Seni & Kreatif</h3>
-                    <p class="text-xs text-gray-500">Kaligrafi & Menggambar</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galeri Bukti -->
-    <section id="gallery" class="py-24 bg-white">
-        <div class="px-6 md:px-20 max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-navy">Galeri Jejak Aktif</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto italic">"Bukti nyata dari dedikasi saya dalam berorganisasi dan meraih prestasi."</p>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Foto HIMKA UNSIKA -->
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-2xl shadow-lg">
-                        <img src="IMG-20251206-WA0151.jpg" alt="Aktif HIMKA UNSIKA" class="img-evidence" onerror="this.src='https://via.placeholder.com/400x300?text=Organisasi+HIMKA'">
-                        <div class="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4 text-center">
-                            <p class="text-white text-sm font-semibold">Aktif dalam Himpunan Mahasiswa Kebidanan (HIMKA) UNSIKA</p>
-                        </div>
+            <div class="flex justify-center relative">
+                <div class="relative w-72 h-72 md:w-[450px] md:h-[450px] floating">
+                    <div class="absolute inset-0 bg-[#C5A059] rounded-3xl rotate-6 opacity-20"></div>
+                    <div class="relative w-full h-full rounded-3xl overflow-hidden border-4 border-[#C5A059]/30 shadow-2xl z-10 bg-[#0A2647]">
+                        <!-- Pastikan nama file ini sesuai dengan yang kamu upload ke GitHub -->
+                        <img id="profileImg" src="IMG-20260304-WA0006.jpg" alt="Tania Profile" 
+                             class="w-full h-full object-cover" 
+                             onerror="handleImageError(this, 'Tania Eki')">
                     </div>
-                </div>
-                <!-- Foto Miss Duta Keputrian -->
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-2xl shadow-lg">
-                        <img src="IMG-20231227-WA0001.jpg" alt="The 1st Miss of Duta Keputrian" class="img-evidence" onerror="this.src='https://via.placeholder.com/400x300?text=Duta+Keputrian'">
-                        <div class="absolute inset-0 bg-maroon/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4 text-center">
-                            <p class="text-white text-sm font-semibold">Gelar The 1st Miss of Duta Keputrian 2023</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Foto Language Section -->
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-2xl shadow-lg">
-                        <img src="IMG-20240104-WA0005.jpg" alt="Language Section Activity" class="img-evidence" onerror="this.src='https://via.placeholder.com/400x300?text=Language+Section'">
-                        <div class="absolute inset-0 bg-yellow-600/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4 text-center">
-                            <p class="text-white text-sm font-semibold">Memimpin komunitas Bahasa Arab & Inggris</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Foto KSM Kimia -->
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-2xl shadow-lg">
-                        <img src="IMG-20231227-WA0041.jpg" alt="Penghargaan KSM Kimia" class="img-evidence" onerror="this.src='https://via.placeholder.com/400x300?text=KSM+Kimia'">
-                        <div class="absolute inset-0 bg-green-700/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-4 text-center">
-                            <p class="text-white text-sm font-semibold">Penerimaan Penghargaan KSM Kimia Kabupaten</p>
-                        </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl z-20 border border-[#C5A059]/20 heartbeat">
+                        <i class="fas fa-stethoscope text-3xl text-[#0A2647]"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Kaki Halaman (Footer) -->
-    <footer class="bg-navy text-white py-16 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-6">Tania Eki Permatasari</h2>
-            <div class="flex justify-center space-x-8 mb-10">
-                <a href="mailto:ekitania6@gmail.com" class="hover:text-yellow-400"><i class="fas fa-envelope mr-2"></i> Email</a>
-                <a href="https://wa.me/6281224289691" class="hover:text-green-400"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
+    <!-- Medical Focus Section -->
+    <section id="about" class="py-32 bg-white">
+        <div class="container mx-auto px-8 md:px-16">
+            <div class="text-center mb-20">
+                <h6 class="text-[#C5A059] font-bold tracking-[0.4em] uppercase text-[10px] mb-4">Core Values</h6>
+                <h2 class="text-5xl font-bold text-[#0A2647] mb-4">Filosofi <span class="text-[#C5A059] italic">Pelayanan</span></h2>
+                <div class="w-24 h-1 bg-[#C5A059] mx-auto"></div>
             </div>
-            <p class="opacity-50 text-sm">© 2026 Calon Bidan Indonesia Berprestasi. Dikembangkan untuk GSA 2026.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="medical-card p-10 text-center">
+                    <div class="w-16 h-16 bg-[#0A2647] rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#C5A059]">
+                        <i class="fas fa-baby text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Maternal Care</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Menjaga kesehatan ibu selama masa kehamilan hingga nifas dengan penuh ketelitian.</p>
+                </div>
+                <div class="medical-card p-10 text-center md:-translate-y-8 bg-[#0A2647] text-white">
+                    <div class="w-16 h-16 bg-[#C5A059] rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#0A2647]">
+                        <i class="fas fa-hand-holding-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-[#C5A059]">Empati Tinggi</h3>
+                    <p class="text-sm text-blue-100/70 leading-relaxed">Mendengarkan dan memahami kondisi pasien secara psikologis dan fisik.</p>
+                </div>
+                <div class="medical-card p-10 text-center">
+                    <div class="w-16 h-16 bg-[#0A2647] rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#C5A059]">
+                        <i class="fas fa-users-medical text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Leadership</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Aktif dalam organisasi kemahasiswaan (HIMKA) untuk mengasah manajemen waktu dan tim.</p>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Gallery/Achievements -->
+    <section id="works" class="py-32 bg-[#0A2647] relative">
+        <div class="container mx-auto px-8 md:px-16">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h6 class="text-[#C5A059] font-bold tracking-[0.4em] uppercase text-[10px] mb-4">Portofolio Kegiatan</h6>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white italic">Dedikasi & <span class="gold-text">Aksi Nyata</span></h2>
+                </div>
+                <p class="text-blue-100/50 max-w-xs text-sm italic">"Teori di kelas, bakti di masyarakat. Mengabdi melalui ilmu kebidanan."</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Achievement 1 -->
+                <div class="group relative rounded-3xl overflow-hidden aspect-square bg-[#144272] border border-white/5">
+                    <img src="IMG-20251206-WA0151.jpg" alt="Kegiatan HIMKA" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700" onerror="handleImageError(this, 'HIMKA')">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A2647] via-transparent to-transparent p-8 flex flex-col justify-end">
+                        <p class="text-[#C5A059] font-bold text-[10px] uppercase tracking-widest mb-2">HIMKA UNSIKA</p>
+                        <h4 class="text-white font-bold">Aktivitas Organisasi</h4>
+                    </div>
+                </div>
+                <!-- Achievement 2 -->
+                <div class="group relative rounded-3xl overflow-hidden aspect-square bg-[#144272] border border-white/5 lg:mt-12">
+                    <img src="IMG-20231227-WA0001.jpg" alt="Duta Keputrian" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700" onerror="handleImageError(this, 'PRESTASI')">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A2647] via-transparent to-transparent p-8 flex flex-col justify-end">
+                        <p class="text-[#C5A059] font-bold text-[10px] uppercase tracking-widest mb-2">Juara 1</p>
+                        <h4 class="text-white font-bold">Duta Keputrian</h4>
+                    </div>
+                </div>
+                <!-- Achievement 3 -->
+                <div class="group relative rounded-3xl overflow-hidden aspect-square bg-[#144272] border border-white/5">
+                    <img src="IMG-20240104-WA0005.jpg" alt="Language Chief" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700" onerror="handleImageError(this, 'LEADERSHIP')">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A2647] via-transparent to-transparent p-8 flex flex-col justify-end">
+                        <p class="text-[#C5A059] font-bold text-[10px] uppercase tracking-widest mb-2">Language Chief</p>
+                        <h4 class="text-white font-bold">Kepemimpinan</h4>
+                    </div>
+                </div>
+                <!-- Achievement 4 -->
+                <div class="group relative rounded-3xl overflow-hidden aspect-square bg-[#144272] border border-white/5 lg:mt-12">
+                    <div class="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-[#144272] to-[#0A2647]">
+                        <i class="fas fa-stethoscope text-4xl text-[#C5A059] mb-4"></i>
+                        <h4 class="text-white font-bold italic">"Ready to Serve"</h4>
+                        <p class="text-blue-100/50 text-xs mt-2 uppercase tracking-widest">Future Midwife</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-20 text-center relative border-t border-gray-100">
+        <div class="brand text-3xl font-bold text-[#0A2647] mb-8 italic">Tania Eki Permatasari</div>
+        <div class="flex justify-center gap-8 mb-12">
+            <a href="mailto:ekitania6@gmail.com" class="w-12 h-12 rounded-full border border-[#0A2647]/10 flex items-center justify-center hover:bg-[#0A2647] hover:text-white transition"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/6281224289691" target="_blank" class="w-12 h-12 rounded-full border border-[#0A2647]/10 flex items-center justify-center hover:bg-[#0A2647] hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/tania-eki-a23a033b4/" target="_blank" class="w-12 h-12 rounded-full border border-[#0A2647]/10 flex items-center justify-center hover:bg-[#0A2647] hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="text-[10px] font-bold tracking-[0.4em] text-gray-400 uppercase">&copy; 2026 Tania Eki - Professional Portfolio</p>
     </footer>
 
     <script>
-        const apiKey = ""; // API Key dikelola oleh sistem
+        const apiKey = ""; 
+
+        function handleImageError(img, text) {
+            const container = img.parentElement;
+            container.innerHTML = <div class="w-full h-full img-placeholder"><span>${text}</span></div>;
+        }
 
         async function callGemini(prompt) {
             try {
                 const response = await fetch(https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: prompt }] }]
-                    })
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
                 });
                 const data = await response.json();
-                return data.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf, sistem sedang sibuk.";
-            } catch (error) {
-                return "Koneksi terputus.";
-            }
+                return data.candidates?.[0]?.content?.parts?.[0]?.text || "Masa depan kesehatan ada di tanganmu.";
+            } catch (error) { return "Tetaplah melayani dengan hati, Tania."; }
         }
 
-        async function generateMotivationalQuote() {
-            const display = document.getElementById('quote-display');
-            display.innerHTML = '<span class="spinner"></span> Menulis pesan inspirasi...';
-            display.classList.remove('opacity-0');
-            display.classList.add('opacity-100');
-            const quote = await callGemini("Buat kutipan motivasi singkat dan ceria dalam Bahasa Indonesia untuk Tania, mahasiswi kebidanan UNSIKA yang aktif di HIMKA. Hubungkan semangat kepemimpinan dengan kasih sayang seorang bidan.");
-            display.innerText = quote;
-        }
-
-        async function askAIVision() {
-            const resultDiv = document.getElementById('ai-vision-result');
-            resultDiv.classList.remove('hidden');
-            resultDiv.innerHTML = '<span class="spinner"></span> Menganalisis potensi kepemimpinanmu...';
-            const analysis = await callGemini("Jelaskan secara inspiratif mengapa pengalaman Tania sebagai mahasiswi D3 Kebidanan UNSIKA yang aktif di HIMKA, mantan ketua bahasa, dan peraih gelar Miss Duta Keputrian menjadikannya calon bidan yang unggul. Tekankan pada kemampuan sosial dan empati.");
-            resultDiv.innerText = analysis;
+        async function generateMotivationalAI() {
+            const box = document.getElementById('ai-quote-box');
+            box.classList.remove('hidden');
+            box.innerHTML = '<div class="flex items-center gap-3"><i class="fas fa-heartbeat animate-pulse text-[#C5A059]"></i> <span>Menenun inspirasi medis...</span></div>';
+            
+            const prompt = "Buat kutipan puitis sangat singkat (1-2 kalimat) untuk Tania Eki. Dia mahasiswi kebidanan UNSIKA yang berprestasi (Juara 1 Duta Keputrian) dan aktif di HIMKA. Hubungkan dengan detak jantung kehidupan dan kemuliaan bidan. Bahasa elegan.";
+            
+            const result = await callGemini(prompt);
+            box.innerText = result;
         }
     </script>
 </body>
